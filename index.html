@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jonathan & Dinah — Notre mariage</title>
+  <meta name="description" content="Site du mariage de Jonathan & Dinah">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ SVG réutilisables (fleurs / branches) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="branch" viewBox="0 0 200 300">
+      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+        <path d="M100 295 C 95 220, 110 150, 90 10"/>
+        <path d="M98 250 C 70 240, 45 215, 35 185 C 65 190, 88 215, 98 250Z"/>
+        <path d="M101 225 C 130 215, 155 190, 165 160 C 135 165, 110 190, 101 225Z"/>
+        <path d="M100 185 C 72 172, 52 145, 48 115 C 76 124, 95 152, 100 185Z"/>
+        <path d="M100 150 C 128 138, 148 112, 152 82 C 124 92, 104 120, 100 150Z"/>
+        <path d="M96 110 C 74 96, 62 72, 62 48 C 84 60, 96 84, 96 110Z"/>
+        <path d="M95 75 C 115 62, 126 40, 125 18 C 106 30, 96 52, 95 75Z"/>
+        <path d="M70 233 L98 250 M130 192 L101 225 M66 140 L100 185 M126 110 L100 150 M75 72 L96 110 M112 40 L95 75" stroke-width=".8"/>
+      </g>
+    </symbol>
+    <symbol id="flower" viewBox="0 0 100 100">
+      <g>
+        <ellipse cx="50" cy="28" rx="15" ry="22" fill="#f7d0da"/>
+        <ellipse cx="50" cy="72" rx="15" ry="22" fill="#f7d0da"/>
+        <ellipse cx="28" cy="50" rx="22" ry="15" fill="#f2b8c6"/>
+        <ellipse cx="72" cy="50" rx="22" ry="15" fill="#f2b8c6"/>
+        <ellipse cx="34" cy="34" rx="15" ry="20" transform="rotate(-45 34 34)" fill="#fce4ea"/>
+        <ellipse cx="66" cy="66" rx="15" ry="20" transform="rotate(-45 66 66)" fill="#fce4ea"/>
+        <ellipse cx="66" cy="34" rx="15" ry="20" transform="rotate(45 66 34)" fill="#fce4ea"/>
+        <ellipse cx="34" cy="66" rx="15" ry="20" transform="rotate(45 34 66)" fill="#fce4ea"/>
+        <circle cx="50" cy="50" r="10" fill="#e68ba1"/>
+        <circle cx="50" cy="50" r="5" fill="#c9a66b"/>
+      </g>
+    </symbol>
+    <symbol id="heart-divider" viewBox="0 0 120 30">
+      <g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+        <path d="M5 18 C 30 18, 40 10, 52 14"/>
+        <path d="M115 18 C 90 18, 80 10, 68 14"/>
+        <path d="M60 25 C 48 16, 46 6, 54 5 C 58 4, 60 8, 60 10 C 60 8, 62 4, 66 5 C 74 6, 72 16, 60 25Z" fill="#f2b8c6"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ EN-TÊTE / MENU ============ -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#accueil" class="logo">J<span>&amp;</span>D</a>
+    <nav class="nav" id="nav">
+      <a href="#accueil" class="nav__link active">Accueil</a>
+      <a href="#temoignages" class="nav__link">Témoignages</a>
+      <a href="#theme" class="nav__link">Thème</a>
+      <a href="#programme" class="nav__link">Programme</a>
+      <a href="#histoire" class="nav__link">Notre histoire</a>
+      <a href="#cagnotte" class="nav__link">Cagnotte</a>
+      <a href="#cliches" class="nav__link">Clichés</a>
+      <a href="#rsvp" class="btn btn--small nav__cta">Je confirme</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ ACCUEIL ============ -->
+<section class="hero" id="accueil">
+  <div class="container hero__inner">
+    <div class="hero__text reveal">
+      <svg class="hero__heart"><use href="#heart-divider"/></svg>
+      <h1 class="script hero__title">Jonathan <span>&amp;</span> Dinah</h1>
+      <p class="script hero__tagline">Séparés par obéissance, réunis par Sa miséricorde</p>
+      <p class="hero__subtitle">Nous nous marions le <strong id="wedding-date-label">samedi 12 décembre 2026</strong></p>
+      <div class="countdown" id="countdown" data-date="2026-12-12T15:00:00">
+        <div class="countdown__item"><span id="cd-days">000</span><small>Jours</small></div>
+        <div class="countdown__item"><span id="cd-hours">00</span><small>Heures</small></div>
+        <div class="countdown__item"><span id="cd-min">00</span><small>Minutes</small></div>
+        <div class="countdown__item"><span id="cd-sec">00</span><small>Secondes</small></div>
+      </div>
+      <a href="#rsvp" class="btn">Confirmer ma présence</a>
+    </div>
+    <div class="hero__visual reveal">
+      <div class="hero__frame"></div>
+      <img class="hero__photo" src="assets/6.jpeg" alt="Jonathan et Dinah" width="1200" height="1600">
+      <svg class="hero__flower hero__flower--1"><use href="#flower"/></svg>
+      <svg class="hero__flower hero__flower--2"><use href="#flower"/></svg>
+      <svg class="hero__flower hero__flower--3"><use href="#flower"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LES MARIÉS ============ -->
+<section class="section couple" id="temoignages">
+  <svg class="deco-branch deco-branch--left"><use href="#branch"/></svg>
+  <svg class="deco-branch deco-branch--right"><use href="#branch"/></svg>
+  <div class="container">
+    <div class="section__head reveal">
+      <svg class="divider"><use href="#heart-divider"/></svg>
+      <h2 class="script">Nos témoignages</h2>
+    </div>
+    <div class="couple__row reveal">
+      <div class="couple__photo couple__photo--dinah img" style="--img:url('assets/10.jpeg')"></div>
+      <div class="couple__text">
+        <h3 class="script">Dinah</h3>
+        <p>J'ai rencontré le Seigneur fin 2024. J'ai laissé mon ancienne vie pour apprendre à marcher avec Lui, et c'est là qu'Il a commencé à me transformer.</p>
+        <p class="couple__more" hidden>La suite de mon témoignage arrive très bientôt.</p>
+        <button type="button" class="read-more" aria-expanded="false">Lire la suite</button>
+      </div>
+    </div>
+    <div class="couple__row couple__row--reverse reveal">
+      <div class="couple__photo couple__photo--jonathan img" style="--img:url('assets/11.jpeg')"></div>
+      <div class="couple__text">
+        <h3 class="script">Jonathan</h3>
+        <p>Fin 2024, ma route a croisé celle du Seigneur. En Lui obéissant, j'ai grandi dans Sa connaissance, et Il a transformé mon caractère et mes principes de vie.</p>
+        <p class="couple__more" hidden>La suite de mon témoignage arrive très bientôt.</p>
+        <button type="button" class="read-more" aria-expanded="false">Lire la suite</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bandeau photo -->
+<div class="banner img" style="--img:url('assets/4.jpeg');--pos:center 22%">
+  <div class="banner__overlay"></div>
+  <p class="script banner__quote">« Deux âmes, un seul cœur »</p>
+</div>
+
+<!-- ============ THÈME ============ -->
+<section class="section theme" id="theme">
+  <div class="container">
+    <div class="section__head reveal">
+      <svg class="divider"><use href="#heart-divider"/></svg>
+      <h2 class="script">Le thème</h2>
+      <p class="section__intro">Pour cette journée, nous avons choisi le <strong>rose dragée</strong>, rehaussé d'ivoire nacré et d'or champagne. Voici quelques repères pour vous accorder à la fête.</p>
+    </div>
+
+    <div class="palette reveal">
+      <div class="palette__swatch" style="--c:#eba6b6"><span>Rose dragée</span></div>
+      <div class="palette__swatch" style="--c:#fff9f3"><span>Ivoire nacré</span></div>
+      <div class="palette__swatch" style="--c:#c9a66b"><span>Or champagne</span></div>
+    </div>
+
+    <div class="cards cards--3">
+      <article class="card reveal">
+        <div class="card__icon">👗</div>
+        <h3>Dress code</h3>
+        <p>Ici, la règle d'or, c'est la simplicité : inutile de vendre un rein pour une tenue ! Venez simples, soignés, avec une touche de rose si le cœur vous en dit. Le blanc ? On le laisse à la mariée, elle y tient.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__icon">🌸</div>
+        <h3>Ambiance</h3>
+        <p>Le Seigneur sera au centre de cette journée. Attendez-vous à une ambiance conviviale et saine, mais tout sauf ennuyeuse ! Et côté assiettes, le menu reste une surprise : venez avec le sourire… et l'appétit.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card__icon">🧣</div>
+        <h3>Petit conseil</h3>
+        <p>Le 12 décembre, l'hiver sera au rendez-vous : prévoyez un bon manteau, des chaussures adaptées au froid et à la pluie, et un peu d'avance sur la route. Les belles tenues se portent aussi avec une écharpe !</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAMME ============ -->
+<section class="section program" id="programme">
+  <div class="program__bg img" style="--img:url('assets/2.jpeg');--pos:center 40%"></div>
+  <div class="container">
+    <div class="section__head reveal">
+      <svg class="divider"><use href="#heart-divider"/></svg>
+      <h2 class="script">Le programme</h2>
+    </div>
+    <div class="cards cards--3">
+      <article class="event-card reveal">
+        <a class="event-card__img img" href="https://www.google.com/maps/search/?api=1&amp;query=Mairie%20de%20Champs-sur-Marne%2C%2077420" target="_blank" rel="noopener" aria-label="Voir la mairie de Champs-sur-Marne sur Google Maps" style="--img:url('https://commons.wikimedia.org/wiki/Special:FilePath/Mairie_de_Champs_sur_Marne_(4363002643).jpg?width=800')"></a>
+        <h3 class="script">La mairie</h3>
+        <svg class="divider divider--small"><use href="#heart-divider"/></svg>
+        <p class="event-card__date">Samedi 12 décembre 2026</p>
+        <p class="event-card__time">15h00</p>
+        <p class="event-card__place">Mairie de Champs-sur-Marne<br>77420 Champs-sur-Marne</p>
+        <a class="event-card__link" href="https://www.google.com/maps/search/?api=1&amp;query=Mairie%20de%20Champs-sur-Marne%2C%2077420" target="_blank" rel="noopener">Voir sur Google Maps</a>
+        <p class="event-card__credit">Photo : <a href="https://commons.wikimedia.org/wiki/File:Mairie_de_Champs_sur_Marne_(4363002643).jpg" target="_blank" rel="noopener">besopha</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/deed.fr" target="_blank" rel="noopener">CC BY-SA 2.0</a></p>
+      </article>
+      <article class="event-card reveal">
+        <div class="event-card__img img" style="--img:url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=80')"></div>
+        <h3 class="script">La cérémonie</h3>
+        <svg class="divider divider--small"><use href="#heart-divider"/></svg>
+        <p class="event-card__date">Samedi 12 décembre 2026</p>
+        <p class="event-card__time">17h00</p>
+        <p class="event-card__place">Salle à confirmer<br>Adresse provisoire : 1 allée des Roses, 00000 Ville</p>
+        <p class="event-card__soon">Itinéraire disponible prochainement</p>
+      </article>
+      <article class="event-card reveal">
+        <div class="event-card__img img" style="--img:url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80')"></div>
+        <h3 class="script">La réception</h3>
+        <svg class="divider divider--small"><use href="#heart-divider"/></svg>
+        <p class="event-card__date">Samedi 12 décembre 2026</p>
+        <p class="event-card__time">À partir de 19h00</p>
+        <p class="event-card__place">Même salle que la cérémonie<br>Adresse provisoire : 1 allée des Roses, 00000 Ville</p>
+        <p class="event-card__soon">Itinéraire disponible prochainement</p>
+      </article>
+    </div>
+
+    <ol class="day-timeline reveal">
+      <li><span>15h00</span>Mairie</li>
+      <li><span>17h00</span>Cérémonie</li>
+      <li><span>18h30</span>Vin d'honneur</li>
+      <li><span>20h00</span>Dîner</li>
+      <li><span>23h00</span>Soirée dansante</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ NOTRE HISTOIRE + TÉMOIGNAGES ============ -->
+<section class="section story" id="histoire">
+  <svg class="deco-branch deco-branch--left"><use href="#branch"/></svg>
+  <svg class="deco-branch deco-branch--right"><use href="#branch"/></svg>
+  <div class="container">
+    <div class="section__head reveal">
+      <svg class="divider"><use href="#heart-divider"/></svg>
+      <h2 class="script">Notre histoire</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline__item reveal">
+        <div class="timeline__img img" style="--img:url('assets/12.jpeg');--pos:center 50%"></div>
+        <div class="timeline__box">
+          <h3 class="script">Le commencement</h3>
+          <p class="timeline__date">3 mai 2019</p>
+          <p>Notre rencontre, dans le monde. Cinq années ensemble, dans une vie de péché, loin de Dieu.</p>
+        </div>
+      </div>
+      <div class="timeline__item timeline__item--reverse reveal">
+        <div class="timeline__img img" style="--img:url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=800&q=80')"></div>
+        <div class="timeline__box">
+          <h3 class="script">Le carrefour</h3>
+          <p class="timeline__date">1er janvier 2025</p>
+          <p>Notre route croise celle de Jésus, et tout bascule. Par notre pasteur, le Saint-Esprit nous demande de nous séparer pour grandir en Lui. Nous obéissons, et chacun poursuit sa vie de son côté.</p>
+        </div>
+      </div>
+      <div class="timeline__item reveal">
+        <div class="timeline__img img" style="--img:url('assets/7.jpeg')"></div>
+        <div class="timeline__box">
+          <h3 class="script">La miséricorde de Dieu</h3>
+          <p class="timeline__date">11 juillet 2026</p>
+          <p>Nous apprenons à nous reconnaître de nouveau, en Christ : deux personnes nouvelles en tout, dans le caractère comme dans les principes de vie, transformées par le Seigneur. Notre pasteur reçoit de Dieu que nous devons nous marier cette année.</p>
+        </div>
+      </div>
+      <div class="timeline__item timeline__item--reverse reveal">
+        <div class="timeline__img img" style="--img:url('assets/8.jpeg');--pos:center 37%"></div>
+        <div class="timeline__box">
+          <h3 class="script">La bénédiction</h3>
+          <p class="timeline__date">27 septembre 2026</p>
+          <p>L'Église tout entière nous porte et nous bénit.</p>
+        </div>
+      </div>
+      <div class="timeline__item reveal">
+        <div class="timeline__img img" style="--img:url('assets/3.jpeg');--pos:center 40%"></div>
+        <div class="timeline__box">
+          <h3 class="script">La demande en mariage</h3>
+          <p class="timeline__date">13 octobre 2026</p>
+          <p>On rattrape un peu le retard, à la vitesse de Dieu !</p>
+        </div>
+      </div>
+      <div class="timeline__item timeline__item--reverse reveal">
+        <div class="timeline__img img" style="--img:url('assets/9.jpeg');--pos:center 7%"></div>
+        <div class="timeline__box">
+          <h3 class="script">Et maintenant…</h3>
+          <p class="timeline__date">12 décembre 2026</p>
+          <p>En attente du grand jour…</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bandeau "Célébrons" -->
+<div class="cta img" style="--img:url('assets/1.jpeg');--pos:center 12%">
+  <div class="cta__overlay"></div>
+  <div class="cta__content reveal">
+    <h2 class="script">Célébrons notre amour</h2>
+    <a href="#rsvp" class="btn btn--small">Je serai là</a>
+  </div>
+</div>
+
+<!-- ============ CAGNOTTE ============ -->
+<section class="section gift" id="cagnotte">
+  <div class="container">
+    <div class="section__head reveal">
+      <svg class="divider"><use href="#heart-divider"/></svg>
+      <h2 class="script">La cagnotte</h2>
+      <p class="section__intro">Votre présence est notre plus beau cadeau. Si vous souhaitez toutefois nous gâter, une cagnotte est ouverte pour notre voyage de noces ✈️</p>
+    </div>
+
+    <div class="cards cards--2">
+      <article class="gift-card reveal">
+        <div class="gift-card__logo gift-card__logo--wero">wero</div>
+        <h3>Par Wero</h3>
+        <p>Depuis l'application de votre banque, envoyez votre participation au numéro :</p>
+        <div class="copy-field">
+          <span id="wero-number">06 00 00 00 00</span>
+          <button class="copy-btn" data-copy="#wero-number">Copier</button>
+        </div>
+        <p class="gift-card__note">Bénéficiaire : Prénom Nom</p>
+      </article>
+
+      <article class="gift-card reveal">
+        <div class="gift-card__logo gift-card__logo--revolut">Revolut</div>
+        <h3>Par Revolut</h3>
+        <p>Participez en un clic via notre lien Revolut, même sans compte Revolut :</p>
+        <div class="copy-field">
+          <span id="revolut-link">revolut.me/votrepseudo</span>
+          <button class="copy-btn" data-copy="#revolut-link">Copier</button>
+        </div>
+        <a href="https://revolut.me/votrepseudo" target="_blank" rel="noopener" class="btn btn--small">Ouvrir Revolut</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLICHÉS ============ -->
+<section class="section gallery" id="cliches">
+  <div class="container">
+    <div class="section__head reveal">
+      <svg class="divider"><use href="#heart-divider"/></svg>
+      <h2 class="script">Nos clichés</h2>
+    </div>
+    <div class="gallery__grid">
+      <a href="assets/12.jpeg" class="gallery__item img reveal" style="--img:url('assets/12.jpeg');--pos:center 42%"></a>
+      <a href="assets/7.jpeg" class="gallery__item img reveal" style="--img:url('assets/7.jpeg')"></a>
+      <a href="assets/1.jpeg" class="gallery__item img reveal" style="--img:url('assets/1.jpeg');--pos:center 43%"></a>
+      <a href="assets/4.jpeg" class="gallery__item img reveal" style="--img:url('assets/4.jpeg');--pos:center 61%"></a>
+      <a href="assets/5.jpeg" class="gallery__item img reveal" style="--img:url('assets/5.jpeg');--pos:center 61%"></a>
+      <a href="assets/6.jpeg" class="gallery__item img reveal" style="--img:url('assets/6.jpeg');--pos:center 52%"></a>
+      <a href="assets/3.jpeg" class="gallery__item img reveal" style="--img:url('assets/3.jpeg');--pos:center 52%"></a>
+      <a href="assets/9.jpeg" class="gallery__item img reveal" style="--img:url('assets/9.jpeg');--pos:center 4%"></a>
+      <a href="assets/2.jpeg" class="gallery__item img reveal" style="--img:url('assets/2.jpeg')"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RSVP ============ -->
+<section class="section rsvp" id="rsvp">
+  <svg class="deco-branch deco-branch--left"><use href="#branch"/></svg>
+  <svg class="deco-branch deco-branch--right"><use href="#branch"/></svg>
+  <div class="container">
+    <div class="rsvp__wreath reveal">
+      <svg class="wreath-flower" ><use href="#flower"/></svg>
+      <svg class="wreath-flower" ><use href="#flower"/></svg>
+      <svg class="wreath-flower" ><use href="#flower"/></svg>
+      <svg class="wreath-flower" ><use href="#flower"/></svg>
+      <svg class="wreath-flower" ><use href="#flower"/></svg>
+      <svg class="wreath-flower" ><use href="#flower"/></svg>
+
+      <div class="rsvp__card">
+        <svg class="divider"><use href="#heart-divider"/></svg>
+        <h2 class="script">Serez-vous des nôtres&nbsp;?</h2>
+        <p class="rsvp__deadline">Merci de répondre avant le 28 novembre 2026</p>
+        <form id="rsvp-form" novalidate>
+          <input type="text" name="nom" placeholder="Nom et prénom" required>
+          <input type="email" name="email" placeholder="Adresse e-mail" required>
+          <div class="radio-group">
+            <label><input type="radio" name="presence" value="oui" checked> Oui, je serai là</label>
+            <label><input type="radio" name="presence" value="non"> Désolé, je ne peux pas</label>
+          </div>
+          <select name="invites">
+            <option value="1">1 personne</option>
+            <option value="2">2 personnes</option>
+            <option value="3">3 personnes</option>
+            <option value="4">4 personnes</option>
+          </select>
+          <select name="moment">
+            <option value="">À quels moments serez-vous présent ?</option>
+            <option>Toute la journée</option>
+            <option>Cérémonie uniquement</option>
+            <option>Vin d'honneur uniquement</option>
+            <option>Dîner et soirée</option>
+          </select>
+          <textarea name="message" rows="3" placeholder="Allergies, régime alimentaire, petit mot…"></textarea>
+          <button type="submit" class="btn">Envoyer ma réponse</button>
+          <p class="form-msg" id="form-msg" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ PIED DE PAGE ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <a href="#accueil" class="logo">J<span>&amp;</span>D</a>
+      <p>Merci de faire partie de notre histoire. Nous avons hâte de célébrer ce jour avec vous.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#temoignages">Témoignages</a></li>
+        <li><a href="#theme">Thème</a></li>
+        <li><a href="#programme">Programme</a></li>
+        <li><a href="#histoire">Notre histoire</a></li>
+        <li><a href="#cagnotte">Cagnotte</a></li>
+        <li><a href="#cliches">Clichés</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>✉️ <a href="mailto:contact@exemple.fr">contact@exemple.fr</a></li>
+        <li>📞 06 00 00 00 00</li>
+        <li>📍 Ville, France</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Le grand jour</h4>
+      <p class="script footer__date">12 · 12 · 2026</p>
+    </div>
+  </div>
+  <p class="footer__copy">© 2026 Jonathan &amp; Dinah — Fait avec amour</p>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox__close" aria-label="Fermer">&times;</button>
+  <button class="lightbox__nav lightbox__prev" aria-label="Précédente">&#8249;</button>
+  <img src="" alt="Cliché du couple">
+  <button class="lightbox__nav lightbox__next" aria-label="Suivante">&#8250;</button>
+</div>
+
+<a href="#accueil" class="to-top" id="to-top" aria-label="Retour en haut">↑</a>
+
+<script src="script.js"></script>
+</body>
+</html>
